@@ -10,3 +10,13 @@ class Index(View):
 
     def post(self, request, *args, **kwargs):
         return render(request, self.template_name, {})
+
+
+class Answer(View):
+    template_name = 'home/answer.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {})
+
+    def post(self, request, *args, **kwargs):
+        return render(request, self.template_name, {})
