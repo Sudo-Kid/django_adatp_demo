@@ -1,0 +1,3 @@
+django
+pip
+-e git+https://github.com/mycroftai/adapt#egg=adapt-parser
