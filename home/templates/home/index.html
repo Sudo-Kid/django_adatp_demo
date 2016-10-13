@@ -5,6 +5,27 @@
     <title>Django Adapt Demo</title>
 </head>
 <body>
-
+<h1>Weather Intent</h1>
+<h2>Programmed Locations</h2>
+<ul>
+    {% for location in locations %}
+        <li>{{ location|title }}</li>
+    {% endfor %}
+</ul>
+{% if response %}
+    <h2>Your response</h2>
+    <ul>
+        <li>Intent Type: {{ response.intent_type }}</li>
+        <li>Confidence: {{ response.confidence }}</li>
+    </ul>
+{% endif %}
+<h2>Ask a question</h2>
+<form method="POST">
+    {% csrf_token %}
+    <ul>
+        {{ form.as_ul }}
+        <li><button type="submit">Submit</button></li>
+    </ul>
+</form>
 </body>
 </html>
